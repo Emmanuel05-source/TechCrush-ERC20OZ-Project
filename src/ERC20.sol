@@ -9,10 +9,7 @@ contract ERC20OZ is ERC20, Ownable {
     string public s_name;
     string private s_symbol;
 
-    constructor(
-        string memory _name,
-        string memory _symbol
-    ) ERC20(_name, _symbol) Ownable(msg.sender) {
+    constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) Ownable(msg.sender) {
         // ethereum and the symbol to be ETH
         s_name = _name;
         s_symbol = _symbol;
@@ -22,7 +19,7 @@ contract ERC20OZ is ERC20, Ownable {
         // decimals();
     }
 
-    function mint(uint _amount, address meThief) public onlyOwner {
+    function mint(uint256 _amount, address meThief) public onlyOwner {
         _mint(meThief, _amount);
     }
 
